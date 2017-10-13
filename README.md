@@ -8,8 +8,18 @@ To view my project go this webpage using Google Chrome: http://agrygo.github.io/
 Optimizations:
  changePizzaSlices:  replace querySelectorAll with getElementsByClassName
  reduced number of pizzas from 100 to 50 in the for loop
-    
-    
+
+ main.js
+ updated `document.querySelector` to `document.getElementById()` in `changeSliderLabel()`
+ declare `pizzasDiv` variable outside the for loop so DOM call is made once
+ `updatePositions()`  
+ updated `document.querySelectorAll` to `document.getElementsByClassName()`   
+ create local var top to save document.body.scrollTop outside loop; update to documentElement for Chrome 61+
+ calculate number of rows using height property of the screen
+ remove var elem declaration which prevents it from being created every time the loop is executed
+ update `document.querySelector("movingPizzas1").appendChild(elem)` with `document.getElementById`
+ move outside of for loop and assign to `var movingPizzas`; remove `appendChild(elem)`
+
 ## Website Performance Optimization portfolio project
 
 Your challenge, if you wish to accept it (and we sure hope you will), is to optimize this online portfolio for speed! In particular, optimize the critical rendering path and make this page render as quickly as possible by applying the techniques you've picked up in the [Critical Rendering Path course](https://www.udacity.com/course/ud884).
