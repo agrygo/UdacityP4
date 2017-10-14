@@ -503,7 +503,7 @@ function updatePositions() {
   for (var i = 0, il = items.length, phase; i < il; i++) {
     //remove document.body.scrollTop
     //var phase = Math.sin((document.body.scrollTop / 1250) + (i % 5));
-    phase = (Math.sin(i % 5));
+    phase = Math.sin(top + (i % 5));
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
 
@@ -528,7 +528,8 @@ document.addEventListener('DOMContentLoaded', function() {
   var rows = (window.screen.height/s) * cols;
   //update document.querySelector with document.getElementById; move outside of for loop and assign to var
   var movingPizzas =  document.getElementById("movingPizzas1");
-  for (var i = 0; i < 24; i++) {
+  var pizzaNum = rows * cols;
+  for (var i = 0; i < pizzaNum; i++) {
     //remove var elem declaration which prevents it from being created every time the loop is executed
     elem = document.createElement('img');
     elem.className = 'mover';
